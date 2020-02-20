@@ -2,14 +2,14 @@ import React from 'react'
 import { Layout as AntLayout } from 'antd'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-
-const { Content: AntContent } = AntLayout
+import classes from './Layout.module.css'
+import Content from './Content/Content'
 
 const Layout = ({ children }) => {
   return (
-    <AntLayout>
+    <AntLayout className={classes.Layout}>
       <Header />
-      <AntContent>{children}</AntContent>
+      <Content>{children}</Content>
       <Footer />
     </AntLayout>
   )
