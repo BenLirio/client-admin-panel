@@ -1,8 +1,12 @@
+.Root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .Content {
   background: #fff;
 }
 .Sider {
 }
 .Layout {
-  height: 100%;
 }

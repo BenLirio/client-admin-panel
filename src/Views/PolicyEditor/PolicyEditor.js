@@ -9,7 +9,7 @@ const { Sider: AntSider, Content: AntContent } = AntLayout
 
 const PolicyEditor = () => {
   return (
-    <>
+    <div className={classes.Root}>
       <Filters />
       <AntLayout className={classes.Layout}>
         <AntSider className={classes.Sider}>
@@ -19,7 +19,7 @@ const PolicyEditor = () => {
           <WorkspacesTable />
         </AntContent>
       </AntLayout>
-    </>
+    </div>
   )
 }
 
