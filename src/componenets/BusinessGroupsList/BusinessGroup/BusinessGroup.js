@@ -1,15 +1,17 @@
 import React from 'react'
 import { Checkbox } from 'antd'
 
-const text = 'laksdjfklasdjflkajsdfkljdsaklfjlkd'
-const maxLength = 20
+const maxLength = 15
 
-const BusinessGroup = ({ key, style }) => {
+const BusinessGroup = ({ name, onSelect, defaultSelected }) => {
   return (
-    <div key={key} style={style}>
-      <Checkbox>
-        {text.slice(0, maxLength)}
-        {text.length > maxLength ? '...' : ''}
+    <div>
+      <Checkbox
+        defaultChecked={defaultSelected}
+        onChange={e => onSelect(e.target.checked)}
+      >
+        {name.slice(0, maxLength)}
+        {name.length > maxLength ? '...' : ''}
       </Checkbox>
     </div>
   )
