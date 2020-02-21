@@ -1,7 +1,5 @@
+import { Table } from 'antd'
 import React from 'react'
-import classes from './WorkspacesTable.module.css'
-import { Table, Layout } from 'antd'
-import { AutoSizer, List } from 'react-virtualized'
 
 const data = []
 for (let i = 0; i < 1000; i++) {

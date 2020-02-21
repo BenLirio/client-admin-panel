@@ -1,10 +1,9 @@
-import React from 'react'
-import Filters from '../../componenets/Filters/Filters'
 import { Layout as AntLayout } from 'antd'
+import React from 'react'
 import BusinessGroupsList from '../../componenets/BusinessGroupsList/BusinessGroupsList'
+import Filters from '../../componenets/Filters/Filters'
 import WorkspacesTable from '../../componenets/WorkspacesTable/WorkspacesTable'
 import classes from './PolicyEditor.module.css'
-import TableHeader from '../../componenets/WorkspacesTable/TableHeader/TableHeader'
 
 const { Sider: AntSider, Content: AntContent } = AntLayout
 
