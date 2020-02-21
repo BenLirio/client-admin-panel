@@ -10,8 +10,6 @@ const BusinessGroupsList = () => {
   return (
     <AutoSizer>
       {({ height, width }) => {
-        console.log('height', height)
-        console.log('width', width)
         return (
           <List
             className={classes.List}
