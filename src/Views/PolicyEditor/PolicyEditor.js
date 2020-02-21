@@ -4,6 +4,7 @@ import { Layout as AntLayout } from 'antd'
 import BusinessGroupsList from '../../componenets/BusinessGroupsList/BusinessGroupsList'
 import WorkspacesTable from '../../componenets/WorkspacesTable/WorkspacesTable'
 import classes from './PolicyEditor.module.css'
+import TableHeader from '../../componenets/WorkspacesTable/TableHeader/TableHeader'
 
 const { Sider: AntSider, Content: AntContent } = AntLayout
 
