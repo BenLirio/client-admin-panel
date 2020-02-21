@@ -1,20 +1,25 @@
 import React from 'react'
 import { AutoSizer, List } from 'react-virtualized'
+import BusinessGroup from './BusinessGroup/BusinessGroup'
 import classes from './BusinessGroupsList.module.css'
-import RowRenderer from './RowRenderer/RowRenderer'
+
+const ROW_HEIGHT = 25
+const ROW_COUNT = 100
 
 const BusinessGroupsList = () => {
   return (
     <AutoSizer>
       {({ height, width }) => {
+        console.log('height', height)
+        console.log('width', width)
         return (
           <List
             className={classes.List}
-            rowCount={100}
+            rowCount={ROW_COUNT}
             height={height}
             width={width}
-            rowHeight={25}
-            rowRenderer={RowRenderer}
+            rowHeight={ROW_HEIGHT}
+            rowRenderer={BusinessGroup}
           />
         )
       }}

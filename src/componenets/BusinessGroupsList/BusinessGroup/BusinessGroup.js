@@ -1,9 +1,10 @@
 import React from 'react'
 import { Checkbox } from 'antd'
 
-const text = 'asdf'
-const maxLength = 17
-const RowRenderer = ({ key, index, style }) => {
+const text = 'laksdjfklasdjflkajsdfkljdsaklfjlkd'
+const maxLength = 20
+
+const BusinessGroup = ({ key, style }) => {
   return (
     <div key={key} style={style}>
       <Checkbox>
@@ -14,4 +15,4 @@ const RowRenderer = ({ key, index, style }) => {
   )
 }
 
-export default RowRenderer
+export default BusinessGroup

@@ -1,3 +1,6 @@
 .List {
   padding: 0 12px;
 }
+.List:focus {
+  outline: none;
+}
