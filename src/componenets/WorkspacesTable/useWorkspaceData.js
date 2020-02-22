@@ -4,15 +4,31 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { useContext } from 'react'
 import SelectedContext from '../BusinessGroupsList/selected-context'
-
-const workspaceFilter = () => {
-  return true
-}
+import { useCallback } from 'react'
+import FilterContext from '../Filters/filter-context'
 
 const useWorkspaceData = () => {
   const [workspaces, setWorkspaces] = useState([])
   const [cache, setCache] = useState({})
   const [selected] = useContext(SelectedContext)
+  const [filters] = useContext(FilterContext)
+
+  const filterWorkspaces = useCallback(
+    workspace => {
+      const dateCreated = Date.parse(workspace.date_created)
+      const after = Date.parse(filters.date[0]) || 0
+      const before = Date.parse(filters.date[1]) || Infinity
+      const validPolicy =
+        filters.policy === workspace.policy || filters.policy === 'all'
+      const validSearch = workspace.name
+        .toLowerCase()
+        .includes(filters.search.toLowerCase())
+      const validDate = after < dateCreated && dateCreated < before
+      return validDate && validPolicy && validSearch
+    },
+    [filters]
+  )
+
   useEffect(() => {
     const getData = async () => {
       const keys = Object.keys(selected)
@@ -38,10 +54,10 @@ const useWorkspaceData = () => {
         }
         workspaceData = [...workspaceData, ...data.workspaces]
       }
-      setWorkspaces(workspaceData.filter(workspaceFilter))
+      setWorkspaces(workspaceData.filter(filterWorkspaces))
     }
     getData()
-  }, [selected])
+  }, [selected, filterWorkspaces])
   return [workspaces, setWorkspaces]
 }
 
